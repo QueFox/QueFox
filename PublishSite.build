@@ -1,0 +1,33 @@
+<project name="Quotefish" default="publish" basedir=".">
+
+	<description>
+		This Ant task publishes the Quotefish project to the test server on the Web
+	</description>
+
+	<target name="publish">
+  
+		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/" trust="true">
+			<fileset dir=".">
+				<include name="*.php"/>
+			</fileset>
+		</scp>
+
+		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/css/" trust="true">
+			<fileset dir="css"/>
+		</scp>
+	
+		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/images/" trust="true">
+			<fileset dir="images"/>
+		</scp>
+
+		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/include/" trust="true">
+			<fileset dir="include"/>
+		</scp>
+
+		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/js/" trust="true">
+			<fileset dir="js"/>
+		</scp>
+
+	</target>
+  
+</project>
