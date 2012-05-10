@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Quotefish&trade;</title>
-		<link rel="Stylesheet" href="quotefish.css" type="text/css" media="screen"/>
+		<link rel="Stylesheet" href="css/quotefish.css" type="text/css" media="screen"/>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
