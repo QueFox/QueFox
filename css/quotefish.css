@@ -10,7 +10,7 @@ body  div#container
 	text-align : left;
 	width : 1024px;
 	height : 690px;
-	background-image : url("images/background.png");
+	background-image : url("../images/background.png");
 	font-family : "Helvetica Neue", Arial, Sans-Serif; 
 }
 body  div#container div#banner
@@ -39,7 +39,7 @@ body  div#container div#main
 	Xleft : 0px;
 	width : 1024px;
 	height : 429px;
-	background-image : url("images/background.png");
+	background-image : url("../images/background.png");
 }
 body  div#container div#footer
 {
@@ -105,7 +105,7 @@ div#main div#progress div.progressTick
 	left : 205px;
 	width : 18px;
 	height : 18px;
-	background-image : url("images/greentick.png");
+	background-image : url("../images/greentick.png");
 	visibility : hidden;
 }
 
@@ -340,7 +340,7 @@ div#main div#progress div#tick
 	position : absolute;
 	width : 58px;
 	height : 58px;
-	background-image : url("images/breadcrumbtick.png");
+	background-image : url("../images/breadcrumbtick.png");
 	top : 360px; 
 	left : 80px;
 }
@@ -449,7 +449,7 @@ div#page1Arrow
 	position : absolute;
 	top : 330px; 
 	left : 250px;
-	background-image : url("images/down-arrow-up.png");
+	background-image : url("../images/down-arrow-up.png");
 	width : 70px;
 	height : 69px;
 }
@@ -462,7 +462,7 @@ div#page1Arrow
 	left : 580px;
 	width : 180px;
 	height : 156px;
-	background-image : url("images/tooltip-top.png");
+	background-image : url("../images/tooltip-top.png");
 	background-size : 100%;
 	z-index : 1024;
 }
@@ -487,7 +487,7 @@ div#page1Arrow
 	left : 580px;
 	width : 180px;
 	height : 156px;
-	background-image : url("images/tooltip-bottom.png");
+	background-image : url("../images/tooltip-bottom.png");
 }
 #consumerLocationMapTitle
 {
