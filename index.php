@@ -65,90 +65,90 @@
 					});
 			});
 
-		function focusInEnterCategory()
-		{
-			showEnterCategoryTip();
-		}
-				
-		function showEnterCategoryTip()
-		{
-			$("#enterCategoryTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
-		}
+			function focusInEnterCategory()
+			{
+				showEnterCategoryTip();
+			}
+					
+			function showEnterCategoryTip()
+			{
+				$("#enterCategoryTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+			}
+			
+			function validateEnterCategory()
+			{
+				$selectedCategoryText =  $("#enterCategory").val();
+				$isCategoryValid = ($.inArray($selectedCategoryText, categories) != -1);
+				if (! $isCategoryValid)
+				{
+					//$("#categoryTipText").html("");
+					//$("#enterCategoryTip").animate({left:"100px", top:"100px", width:"360px", height:"320px"}, 500); 
+				}
+				else
+				{				
+					$("div#progress div#category").text($selectedCategoryText);
+					// Set the tool tip to 'You are looking for'
+				}
+				updateCategoryTick();
+				updatePage1Arrow();
+			}
 		
-		function validateEnterCategory()
-		{
-			$selectedCategoryText =  $("#enterCategory").val();
-			$isCategoryValid = ($.inArray($selectedCategoryText, categories) != -1);
-			if (! $isCategoryValid)
+			function focusInEnterConsumerLocation()
 			{
-				//$("#categoryTipText").html("");
-				//$("#enterCategoryTip").animate({left:"100px", top:"100px", width:"360px", height:"320px"}, 500); 
+				showEnterConsumerLocationTip();
 			}
-			else
-			{				
-				$("div#progress div#category").text($selectedCategoryText);
-				// Set the tool tip to 'You are looking for'
-			}
-			updateCategoryTick();
-			updatePage1Arrow();
-		}
-		
-		function focusInEnterConsumerLocation()
-		{
-			showEnterConsumerLocationTip();
-		}
-		
-		function showEnterConsumerLocationTip()
-		{
-			$("#enterConsumerLocationTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
-		}
-
-		function validateEnterConsumerLocation()
-		{
-			if($isConsumerLocationValid)
+			
+			function showEnterConsumerLocationTip()
 			{
-				var consumerLocationText =  $("#enterConsumerLocation").val();
-				$("div#progress div#consumerLocation").text(consumerLocationText);
+				$("#enterConsumerLocationTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
 			}
-			updateConsumerLocationTick();
-			updatePage1Arrow();
-		}
-		
-		function updatePage1Arrow()
-		{
-			if ( $isCategoryValid && $isConsumerLocationValid)
+	
+			function validateEnterConsumerLocation()
 			{
-				$("#page1Arrow").css({visibility : "visible"});
+				if($isConsumerLocationValid)
+				{
+					var consumerLocationText =  $("#enterConsumerLocation").val();
+					$("div#progress div#consumerLocation").text(consumerLocationText);
+				}
+				updateConsumerLocationTick();
+				updatePage1Arrow();
 			}
-			else
+			
+			function updatePage1Arrow()
 			{
-				$("#page1Arrow").css({visibility : "hidden"});
+				if ( $isCategoryValid && $isConsumerLocationValid)
+				{
+					$("#page1Arrow").css({visibility : "visible"});
+				}
+				else
+				{
+					$("#page1Arrow").css({visibility : "hidden"});
+				}
 			}
-		}
-		
-		function updateCategoryTick()
-		{
-			if ( $isCategoryValid )
+			
+			function updateCategoryTick()
 			{
-				$("div#progress div#categoryTick").css({visibility : "visible"});
+				if ( $isCategoryValid )
+				{
+					$("div#progress div#categoryTick").css({visibility : "visible"});
+				}
+				else
+				{
+					$("div#progress div#categoryTick").css({visibility : "hidden"});
+				}
 			}
-			else
+			
+			function updateConsumerLocationTick()
 			{
-				$("div#progress div#categoryTick").css({visibility : "hidden"});
+				if ( $isConsumerLocationValid )
+				{
+					$("div#progress div#consumerLocationTick").css({visibility : "visible"});
+				}
+				else
+				{
+					$("div#progress div#consumerLocationTick").css({visibility : "hidden"});
+				}
 			}
-		}
-		
-		function updateConsumerLocationTick()
-		{
-			if ( $isConsumerLocationValid )
-			{
-				$("div#progress div#consumerLocationTick").css({visibility : "visible"});
-			}
-			else
-			{
-				$("div#progress div#consumerLocationTick").css({visibility : "hidden"});
-			}
-		}
 		
 		</script>
 	</head>
