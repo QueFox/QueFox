@@ -187,7 +187,7 @@
 				narrativeText += '<p/>Otherwise click \'Cancel\' to enter a different category.';
 				 
 				var narrativeDivHtml = '<div id="narrative">' + narrativeText + '</div>';
-				var emailDivHtml = '<div id="email"><input type="text" name="email" /></div>';
+				var emailDivHtml = '<div id="email"><input type="text" name="email" placeholder="Your email address"/></div>';
 				var dialogHtml = narrativeDivHtml + emailDivHtml;
 				
 				var $dialog = 
