@@ -6,24 +6,31 @@
 
 	<target name="publish">
   
+		<echo message="Copying root php files ..."/>
 		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/" trust="true">
 			<fileset dir=".">
 				<include name="*.php"/>
 			</fileset>
 		</scp>
 
+		<echo message="Copying css/quotefish.css ..."/>
 		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/css/" trust="true">
-			<fileset dir="css"/>
+			<fileset dir="css">
+				<include name="quotefish.css"/>
+			</fileset>
 		</scp>
 	
+		<echo message="Copying images/* ..."/>
 		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/images/" trust="true">
 			<fileset dir="images"/>
 		</scp>
 
+		<echo message="Copying include/* ..."/>
 		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/include/" trust="true">
 			<fileset dir="include"/>
 		</scp>
 
+		<echo message="Copying js/* ..."/>
 		<scp todir="root:nxrofbst@www.eirvox.com:/var/www/html/quotefish/js/" trust="true">
 			<fileset dir="js"/>
 		</scp>

@@ -193,7 +193,12 @@
 							{
 								autoOpen: false,
 								title: 'Oops!',
-								modal: true
+								modal: true,
+								buttons:
+								{
+									'Notify Me' : function() { return; },
+									'Cancel' : function() { $(this).dialog("close"); }
+								}
 							});
 					
 				/*
