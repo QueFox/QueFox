@@ -181,14 +181,18 @@
 
 			function handleInvalidCategory(categoryText)
 			{
-				var narrative = 'We don\'t have the category \'' + categoryText +'\' yet.';
-				narrative += '<p/>Enter your email address below and click \'Notify Me\' if you would like us to send you an email when we have added this, or a similar category.';
-				narrative += '<p/>Otherwise click \'Cancel\' to enter a different category.'; 
+				var narrativeText = 'We don\'t have the category \'' + categoryText +'\' yet.';
+				narrativeText += '<p/>Enter your email address below and click \'Notify Me\' ';
+				narrativeText += 'if you would like us to send you an email when we have added this, or a similar category.';
+				narrativeText += '<p/>Otherwise click \'Cancel\' to enter a different category.';
+				 
+				var narrativeDivHtml = '<div id="narrative">' + narrativeText + '</div>';
+				var emailDivHtml = '<div id="email"><input type="text" name="email" /></div>';
+				var dialogHtml = narrativeDivHtml + emailDivHtml;
 				
-					
 				var $dialog = 
 					$('<div id="badCategoryDialog"></div>')
-					.html('<div id="narrative">' + narrative + '</div>')
+					.html(dialogHtml)
 					.dialog(
 							{
 								autoOpen: false,
