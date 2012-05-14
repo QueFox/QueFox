@@ -44,7 +44,15 @@
 						{
 							e.preventDefault();
 							validateEnterCategory();
-							$("#enterConsumerLocation").focus();
+							//if(isCategoryValid)
+							//{
+							//	$("#enterConsumerLocation").focus();
+							//}
+							//else
+							//{
+							//	$("#enterCategory").focus();
+							//}
+							
 						}
 					});
 			});
@@ -79,9 +87,16 @@
 			
 			function validateEnterCategory()
 			{
+				if(isValidatingCategory)
+				{
+					return;
+				}
+				
+				isValidatingCategory = true;
+				
 				$selectedCategoryText =  $("#enterCategory").val();
-				$isCategoryValid = ($.inArray($selectedCategoryText, categories) != -1);
-				if (! $isCategoryValid)
+				isCategoryValid = ($.inArray($selectedCategoryText, categories) != -1);
+				if (! isCategoryValid)
 				{
 					handleInvalidCategory($selectedCategoryText);
 				}
@@ -92,6 +107,7 @@
 				}
 				updateCategoryTick();
 				updatePage1Arrow();
+				isValidatingCategory = false;
 			}
 		
 			function focusInEnterConsumerLocation()
@@ -117,7 +133,7 @@
 			
 			function updatePage1Arrow()
 			{
-				if ( $isCategoryValid && $isConsumerLocationValid)
+				if ( isCategoryValid && $isConsumerLocationValid)
 				{
 					$("#page1Arrow").css({visibility : "visible"});
 				}
@@ -129,7 +145,7 @@
 			
 			function updateCategoryTick()
 			{
-				if ( $isCategoryValid )
+				if ( isCategoryValid )
 				{
 					$("div#progress div#categoryTick").css({visibility : "visible"});
 				}
