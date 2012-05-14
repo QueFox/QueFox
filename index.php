@@ -44,7 +44,7 @@
 						{
 							e.preventDefault();
 							validateEnterCategory();
-							//if(isCategoryValid)
+							//if(isCategoryValid) //
 							//{
 							//	$("#enterConsumerLocation").focus();
 							//}
