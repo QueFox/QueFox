@@ -5,7 +5,7 @@
 	<head>
 		<title>Quotefish&trade;</title>
 		<link rel="Stylesheet" href="css/quotefish.css" type="text/css" media="screen"/>
-		<link rel="stylesheet" href="css/jquery-ui-themes-1.8.20/themes/trontastic/jquery-ui.css" type="text/css"/>
+		<link rel="stylesheet" href="css/jquery-ui-themes-1.8.20/themes/quotefish/jquery-ui-1.8.20.custom.css" type="text/css"/>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAqCKnvVvjuoqdJu9_BosVcUkvKAo0iSBs&libraries=places&sensor=true"></script>
@@ -42,6 +42,7 @@
 						code = (e.keyCode ? e.keyCode : e.which);
 						if (code == 13 || code == 9)
 						{
+							e.preventDefault();
 							validateEnterCategory();
 							$("#enterConsumerLocation").focus();
 						}
@@ -59,6 +60,7 @@
 						code = (e.keyCode ? e.keyCode : e.which);
 						if (code == 13 || code == 9)
 						{
+							e.preventDefault();
 							validateEnterConsumerLocation();
 							$("#page1Arrow").focus();
 						}
