@@ -42,17 +42,7 @@
 						code = (e.keyCode ? e.keyCode : e.which);
 						if (code == 13 || code == 9)
 						{
-							e.preventDefault();
-							validateEnterCategory();
-							//if(isCategoryValid) //
-							//{
-							//	$("#enterConsumerLocation").focus();
-							//}
-							//else
-							//{
-							//	$("#enterCategory").focus();
-							//}
-							
+							$("#enterConsumerLocation").focus();
 						}
 					});
 			});
@@ -68,8 +58,8 @@
 						code = (e.keyCode ? e.keyCode : e.which);
 						if (code == 13 || code == 9)
 						{
-							e.preventDefault();
-							validateEnterConsumerLocation();
+							//e.preventDefault();
+							//validateEnterConsumerLocation();
 							$("#page1Arrow").focus();
 						}
 					});
@@ -87,13 +77,6 @@
 			
 			function validateEnterCategory()
 			{
-				if(isValidatingCategory)
-				{
-					return;
-				}
-				
-				isValidatingCategory = true;
-				
 				$selectedCategoryText =  $("#enterCategory").val();
 				isCategoryValid = ($.inArray($selectedCategoryText, categories) != -1);
 				if (! isCategoryValid)
@@ -107,7 +90,6 @@
 				}
 				updateCategoryTick();
 				updatePage1Arrow();
-				isValidatingCategory = false;
 			}
 		
 			function focusInEnterConsumerLocation()
