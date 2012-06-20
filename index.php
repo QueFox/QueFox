@@ -1,6 +1,9 @@
 <?php include 'include/categories.php';?>
 
 <!DOCTYPE html>
+
+    <!-- Quick test of versioning -->
+
 <html>
 	<head>
 		<title>Quotefish&trade;</title>
