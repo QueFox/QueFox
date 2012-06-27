@@ -35,18 +35,10 @@
 			$(function() {
 				$("#enterCategory")
 					.autocomplete({
-						source: categories
+						source: categories,
+                        select: function(event, ui) { categorySelectedFromAutoCompleteList(event, ui); }
 					}).focusin(function() {
 						focusInEnterCategory();
-					}).focusout(function() {
-						validateEnterCategory();
-					}).keypress(function(e) {
-						var code = null;
-						code = (e.keyCode ? e.keyCode : e.which);
-						if (code == 13 || code == 9)
-						{
-							$("#enterConsumerLocation").focus();
-						}
 					});
 			});
 		
@@ -54,19 +46,19 @@
 				$("#enterConsumerLocation") 
 					.focusin(function() {
 						focusInEnterConsumerLocation();
-					}).focusout(function() {
-						validateEnterConsumerLocation();
-					}).keypress(function(e) {
-						var code = null;
-						code = (e.keyCode ? e.keyCode : e.which);
-						if (code == 13 || code == 9)
-						{
-							//e.preventDefault();
-							//validateEnterConsumerLocation();
-							$("#page1Arrow").focus();
-						}
 					});
 			});
+
+            function categorySelectedFromAutoCompleteList(event, ui)
+            {
+                validateEnterCategory(ui.item.value);
+                $("#enterConsumerLocation").focus();
+            }
+
+            function consumerLocationChosenFromAutoCompleteList()
+            {
+                validateEnterConsumerLocation();
+            }
 
 			function focusInEnterCategory()
 			{
@@ -78,17 +70,16 @@
 				$("#enterCategoryTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
 			}
 			
-			function validateEnterCategory()
+			function validateEnterCategory(selectedCategoryText)
 			{
-				$selectedCategoryText =  $("#enterCategory").val();
-				isCategoryValid = ($.inArray($selectedCategoryText, categories) != -1);
+				isCategoryValid = ($.inArray(selectedCategoryText, categories) != -1);
 				if (! isCategoryValid)
 				{
-					handleInvalidCategory($selectedCategoryText);
+					handleInvalidCategory(selectedCategoryText);
 				}
 				else
-				{				
-					$("div#progress div#category").text($selectedCategoryText);
+				{
+					$("div#progress div#category").text(selectedCategoryText);
 					// Set the tool tip to 'You are looking for'
 				}
 				updateCategoryTick();
