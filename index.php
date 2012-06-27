@@ -300,9 +300,9 @@
 						<div id="page2Marker"></div>
 						
 						<input	type="text" id="enterShortDescription" class="quotefishSingleLineField jq_watermark" 
-								name="enterShortDescription" placeholder="Describe your job in a few short words?"/>
+								name="enterShortDescription" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your job in a few short words&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
 						<input	type="text" id="enterJobLocation" class="quotefishSingleLineField jq_watermark" 
-								name="enterJobLocation" placeholder="Where is your job located?"/>
+								name="enterJobLocation" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where is your job located?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
 
 					</div>
 				</div>
