@@ -455,6 +455,18 @@ div#page1Arrow
 	height : 69px;
 }
 
+div#page2UpArrow
+{
+    visibility : visible;
+    position : absolute;
+    top : 470px;
+    left : 250px;
+    background-image : url("../images/up-arrow-up.png");
+    width : 70px;
+    height : 69px;
+}
+
+
 #enterCategoryTip
 {
 	visibility : hidden;

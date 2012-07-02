@@ -49,6 +49,36 @@
 					});
 			});
 
+            $(function() {
+                $("#enterShortDescription")
+                    .focusout(function() {
+                        processConfirmOnShortJobDescription();
+                    })
+                    .keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnShortJobDescription();
+                        }
+                    })
+            });
+
+            function processConfirmOnShortJobDescription()
+            {
+                var shortDescriptionText = $("#enterShortDescription").val();
+                $("div#progress div#jobDescription").text(shortDescriptionText);
+
+                if(shortDescriptionText.length > 0)
+                {
+                    $("#enterJobLocation").focus();
+                    $("div#progress div#jobDescriptionTick").css({visibility : "visible"});
+                }
+                else
+                {
+                    $("#enterShortDescription").focus();
+                    $("div#progress div#jobDescriptionTick").css({visibility : "hidden"});
+                }
+            }
+
             function categorySelectedFromAutoCompleteList(event, ui)
             {
                 validateEnterCategory(ui.item.value);
@@ -298,7 +328,9 @@
 						<a href="#page2Marker"><div id="page1Arrow"></div></a>
 
 						<div id="page2Marker"></div>
-						
+
+                        <a href="#page1Marker"><div id="page2UpArrow"></div></a>
+
 						<input	type="text" id="enterShortDescription" class="quotefishSingleLineField jq_watermark" 
 								name="enterShortDescription" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your job in a few short words&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
 						<input	type="text" id="enterJobLocation" class="quotefishSingleLineField jq_watermark" 
