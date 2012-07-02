@@ -436,12 +436,12 @@ div#slidingCanvas div#page2Marker
 
 div#mainForm input#enterShortDescription
 {
-	top : 550px;
+	top : 570px;
 }
 
 div#mainForm input#enterJobLocation
 {
-	top : 700px;
+	top : 720px;
 }
 
 div#page1Arrow
@@ -524,4 +524,59 @@ div#page2UpArrow
 
 div#badCategoryDialog
 {
+}
+
+#enterShortDescriptionTip
+{
+    visibility : hidden;
+    position : absolute;
+    top : 472px;
+    left : 580px;
+    width : 180px;
+    height : 156px;
+    background-image : url("../images/tooltip-top.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#shortDescriptionTipText
+{
+    position : absolute;
+    top : 5px;
+    left : 30px;
+    width : 140px;
+    height : 150px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
+}
+
+#enterJobLocationTip
+{
+    visibility : hidden;
+    position : absolute;
+    top : 715px;
+    left : 580px;
+    width : 180px;
+    height : 156px;
+    background-image : url("../images/tooltip-bottom.png");
+}
+#jobLocationMapTitle
+{
+    position : absolute;
+    top : 1px;
+    left : 23px;
+    width : 155px;
+    color : white;
+    font-size : 10pt;
+    font-style : italic;
+}
+
+#jobLocationMap
+{
+    position : absolute;
+    top : 18px;
+    left : 23px;
+    height : 134px;
+    width : 155px;
 }

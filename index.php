@@ -51,10 +51,11 @@
 
             $(function() {
                 $("#enterShortDescription")
-                    .focusout(function() {
+                    .focusin(function() {
+                        focusInEnterShortDescription();
+                    }).focusout(function() {
                         processConfirmOnShortJobDescription();
-                    })
-                    .keypress(function(e) {
+                    }).keypress(function(e) {
                         if(e.which == 13)
                         {
                             processConfirmOnShortJobDescription();
@@ -74,7 +75,6 @@
                 }
                 else
                 {
-                    $("#enterShortDescription").focus();
                     $("div#progress div#jobDescriptionTick").css({visibility : "hidden"});
                 }
             }
@@ -173,7 +173,62 @@
 				}
 			}
 
-			function updateTips( t ) {
+            function focusInEnterShortDescription()
+            {
+                showEnterShortDescriptionTip();
+            }
+
+            function showEnterShortDescriptionTip()
+            {
+                $("#enterShortDescriptionTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            $(function() {
+                $("#enterJobLocation")
+                    .focusin(function() {
+                        focusInEnterJobLocation();
+                    });
+            });
+
+            function focusInEnterJobLocation()
+            {
+                showEnterJobLocationTip();
+            }
+
+            function showEnterJobLocationTip()
+            {
+                $("#enterJobLocationTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            function jobLocationChosenFromAutoCompleteList()
+            {
+                validateEnterJobLocation();
+            }
+
+            function validateEnterJobLocation()
+            {
+                if($isJobLocationValid)
+                {
+                    var jobLocationText =  $("#enterJobLocation").val();
+                    $("div#progress div#jobLocation").text(jobLocationText);
+                }
+                updateJobLocationTick();
+                //updatePage2DownArrow();
+            }
+
+            function updateJobLocationTick()
+            {
+                if ( $isJobLocationValid )
+                {
+                    $("div#progress div#jobLocationTick").css({visibility : "visible"});
+                }
+                else
+                {
+                    $("div#progress div#jobLocationTick").css({visibility : "hidden"});
+                }
+            }
+
+            function updateTips( t ) {
 				tips
 					.text( t )
 					.addClass( "ui-state-highlight" );
@@ -333,8 +388,13 @@
 
 						<input	type="text" id="enterShortDescription" class="quotefishSingleLineField jq_watermark" 
 								name="enterShortDescription" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your job in a few short words&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
+                        <div id="enterShortDescriptionTip"><div id="shortDescriptionTipText">For example: I need someone to tile my bathroom...</div></div>
 						<input	type="text" id="enterJobLocation" class="quotefishSingleLineField jq_watermark" 
 								name="enterJobLocation" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where is your job located?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
+                        <div id="enterJobLocationTip">
+                            <div id="jobLocationMapTitle">Your job is here:</div>
+                            <div id="jobLocationMap"></div>
+                        </div>
 
 					</div>
 				</div>
