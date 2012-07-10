@@ -266,24 +266,74 @@
 
             function button500Pressed()
             {
+                isBudgetValid = true;
                 $("#button500").css({'background-image' : 'url("images/prices-500-down.png")'});
                 $("#button500To2000").css({'background-image' : 'url("images/prices-500to2000-up.png")'});
                 $("#button2000").css({'background-image' : 'url("images/prices-2000-up.png")'});
+                $("div#progress div#budget").text("<€500");
+                $("div#progress div#budgetTick").css({visibility : "visible"});
             }
 
             function button500To2000Pressed()
             {
+                isBudgetValid = true;
                 $("#button500").css({'background-image' : 'url("images/prices-500-up.png")'});
                 $("#button500To2000").css({'background-image' : 'url("images/prices-500to2000-down.png")'});
                 $("#button2000").css({'background-image' : 'url("images/prices-2000-up.png")'});
+                $("div#progress div#budget").text("€500-€2,000");
+                $("div#progress div#budgetTick").css({visibility : "visible"});
             }
 
             function button2000Pressed()
             {
+                isBudgetValid = true;
                 $("#button500").css({'background-image' : 'url("images/prices-500-up.png")'});
                 $("#button500To2000").css({'background-image' : 'url("images/prices-500to2000-up.png")'});
                 $("#button2000").css({'background-image' : 'url("images/prices-2000-down.png")'});
+                $("div#progress div#budget").text("€2,000+");
+                $("div#progress div#budgetTick").css({visibility : "visible"});
             }
+
+            $(function() {
+                $("#enterLongDescription")
+                    .focusin(function() {
+                        focusInEnterLongDescription();
+                    }).focusout(function() {
+                        processConfirmOnLongDescription();
+                    }).keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnLongDescription();
+                        }
+                    });
+            });
+
+
+            function focusInEnterLongDescription()
+            {
+                $("#enterLongDescriptionTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+                $("#budgetTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            function processConfirmOnLongDescription()
+            {
+                var longDescriptionText = $("#enterLongDescription").val();
+                $("div#progress div#jobInDetail").text(longDescriptionText);
+
+                if(longDescriptionText.length > 0)
+                {
+                    //$("#enterJobLocation").focus();
+                    $("div#progress div#jobInDetailTick").css({visibility : "visible"});
+                    isLongDescriptionValid = true;
+                }
+                else
+                {
+                    $("div#progress div#jobInDetailTick").css({visibility : "hidden"});
+                    isLongDescriptionValid = false;
+                }
+            }
+
+
             function updateTips( t ) {
 				tips
 					.text( t )
@@ -404,12 +454,8 @@
 					<div id="consumerLocation"></div><div id="consumerLocationTick" class="progressTick"></div>
 					<div id="jobDescription"></div><div id="jobDescriptionTick" class="progressTick"></div>
 					<div id="jobLocation"></div><div id="jobLocationTick" class="progressTick"></div>
-					<div id="jobInDetail"></div>
-					<div id="budget">
-						<div id="budgetSmall"></div>
-						<div id="budgetMedium"></div>
-						<div id="budgetLarge"></div>
-					</div>
+					<div id="jobInDetail"></div><div id="jobInDetailTick" class="progressTick"></div>
+					<div id="budget"></div><div id="budgetTick" class="progressTick"></div>
 					<div id="visitType">
 						<div id="newUser"></div>
 						<div id="returnVisit"></div>
@@ -457,12 +503,14 @@
                         <div id="page3Marker"></div>
 
                         <textarea id="enterLongDescription" class="quotefishMultiLineField jq_watermark" name="enterLongDescription" placeholder="Describe your job in detail"></textarea>
+                        <div id="enterLongDescriptionTip"><div id="longDescriptionTipText">Please supply all the information you can so businesses can give you their best quote. The more information you provide, the more quotes you'll receive.</div></div>
 
                         <div id="budgetButtons">
                             <div id="button500"></div>
                             <div id="button500To2000"></div>
                             <div id="button2000"></div>
                         </div>
+                        <div id="budgetTip"><div id="budgetTipText">This is where you select your budget for your job. Your selection here dictates how much the quoting business pay to quote on your job. Up to €500 costs them €2, €500-€2,000 costs €5 and €2,000+ costs €10.</div></div>
 
 					</div>
 				</div>

@@ -200,52 +200,29 @@ div#main div#progress div#jobInDetail
 	left : 20px;
 	top : 150px;
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
+    text-overflow: ellipsis;
 }
+
+div#main div#progress div#jobInDetailTick
+{
+    top : 175px;
+}
+
 
 div#main div#progress div#budget
 {
 	position : absolute;
-	width : 118px;
+    background-color : #e2e2e2;
+	width : 180px;
 	height : 20px;
-	left : 50px;
+	left : 20px;
 	top : 220px;
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
 }
 
-div#main div#progress div#budgetSmall
+div#main div#progress div#budgetTick
 {
-	position : absolute;
-	width : 40px;
-	height : 20px;
-	background-color : #e2e2e2;
-	Xborder-radius : 3px;
-	left : 0px;
-	top : 0px;
-	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
-}
-
-div#main div#progress div#budgetMedium
-{
-	position : absolute;
-	width : 40px;
-	height : 20px;
-	background-color : #e2e2e2;
-	Xborder-radius : 3px;
-	left : 39px;
-	top : 0px;
-	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
-}
-
-div#main div#progress div#budgetLarge
-{
-	position : absolute;
-	width : 40px;
-	height : 20px;
-	background-color : #e2e2e2;
-	Xborder-radius : 3px;
-	left : 78px;
-	top : 0px;
-	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
+    top : 220px;
 }
 
 div#footer img#footerButtons
@@ -659,4 +636,54 @@ div#budgetButtons div#button2000
     top : 0px;
     left : 202px;
     background-image: url("../images/prices-2000-up.png");
+}
+
+#enterLongDescriptionTip
+{
+    visibility : hidden;
+    position : absolute;
+    top : 920px;
+    left : 580px;
+    width : 180px;
+    height : 156px;
+    background-image : url("../images/tooltip-top.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#longDescriptionTipText
+{
+    position : absolute;
+    top : 5px;
+    left : 30px;
+    width : 140px;
+    height : 150px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
+}
+
+#budgetTip
+{
+    visibility : hidden;
+    position : absolute;
+    top : 1165px;
+    left : 455px;
+    width : 180px;
+    height : 156px;
+    background-image : url("../images/tooltip-bottom.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#budgetTipText
+{
+    position : absolute;
+    top : 5px;
+    left : 30px;
+    width : 140px;
+    height : 150px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
 }

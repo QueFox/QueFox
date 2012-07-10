@@ -5,3 +5,5 @@ var consumerLoggedIn = false;
 var $isConsumerLocationValid = false;
 var $isJobLocationValid = false;
 var isJobDescriptionValid = false;
+var isLongDescriptionValid = false;
+var isBudgetValid = false;
