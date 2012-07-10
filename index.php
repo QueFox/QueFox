@@ -72,10 +72,12 @@
                 {
                     $("#enterJobLocation").focus();
                     $("div#progress div#jobDescriptionTick").css({visibility : "visible"});
+                    isJobDescriptionValid = true;
                 }
                 else
                 {
                     $("div#progress div#jobDescriptionTick").css({visibility : "hidden"});
+                    isJobDescriptionValid = false;
                 }
             }
 
@@ -213,7 +215,7 @@
                     $("div#progress div#jobLocation").text(jobLocationText);
                 }
                 updateJobLocationTick();
-                //updatePage2DownArrow();
+                updatePage2DownArrow();
             }
 
             function updateJobLocationTick()
@@ -228,6 +230,60 @@
                 }
             }
 
+            function updatePage2DownArrow()
+            {
+                if ( isJobDescriptionValid && $isJobLocationValid)
+                {
+                    $("#page2DownArrow").css({visibility : "visible"});
+                }
+                else
+                {
+                    $("#page2DownArrow").css({visibility : "hidden"});
+                }
+            }
+
+            $(function() {
+                $("#button500")
+                    .click(function() {
+                        button500Pressed();
+                    })
+            });
+
+            $(function() {
+                $("#button500To2000")
+                    .click(function() {
+                        button500To2000Pressed();
+                    })
+            });
+
+            $(function() {
+                $("#button2000")
+                    .click(function() {
+                        button2000Pressed();
+                    })
+            });
+
+
+            function button500Pressed()
+            {
+                $("#button500").css({'background-image' : 'url("images/prices-500-down.png")'});
+                $("#button500To2000").css({'background-image' : 'url("images/prices-500to2000-up.png")'});
+                $("#button2000").css({'background-image' : 'url("images/prices-2000-up.png")'});
+            }
+
+            function button500To2000Pressed()
+            {
+                $("#button500").css({'background-image' : 'url("images/prices-500-up.png")'});
+                $("#button500To2000").css({'background-image' : 'url("images/prices-500to2000-down.png")'});
+                $("#button2000").css({'background-image' : 'url("images/prices-2000-up.png")'});
+            }
+
+            function button2000Pressed()
+            {
+                $("#button500").css({'background-image' : 'url("images/prices-500-up.png")'});
+                $("#button500To2000").css({'background-image' : 'url("images/prices-500to2000-up.png")'});
+                $("#button2000").css({'background-image' : 'url("images/prices-2000-down.png")'});
+            }
             function updateTips( t ) {
 				tips
 					.text( t )
@@ -372,7 +428,7 @@
 						<div class="ui-widget">
 							<input type="text" id="enterCategory" class="quotefishSingleLineField jq_watermark" name="enterCategory" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What are you looking for?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
 						</div>
-						<div id="enterCategoryTip"><div id="categoryTipText">For example: Cleaning, Lawyer, Mechanic, Disc Jockey...</div></div>
+						<div id="enterCategoryTip"><div id="categoryTipText">For example: Cleaner, Solicitor, Plumber, Caterer, Florist, Tailor, Fencing, Tutor, Wedding, Roofing, Disc Jockey, Graphic Designer, Computer Repairs...</div></div>
 						
 						<input type="text" id="enterConsumerLocation" class="quotefishSingleLineField jq_watermark" name="enterConsumerLocation" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where are you located?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
 						<div id="enterConsumerLocationTip">
@@ -394,6 +450,18 @@
                         <div id="enterJobLocationTip">
                             <div id="jobLocationMapTitle">Your job is here:</div>
                             <div id="jobLocationMap"></div>
+                        </div>
+
+                        <a href="#page3Marker"><div id="page2DownArrow"></div></a>
+
+                        <div id="page3Marker"></div>
+
+                        <textarea id="enterLongDescription" class="quotefishMultiLineField jq_watermark" name="enterLongDescription" placeholder="Describe your job in detail"></textarea>
+
+                        <div id="budgetButtons">
+                            <div id="button500"></div>
+                            <div id="button500To2000"></div>
+                            <div id="button2000"></div>
                         </div>
 
 					</div>

@@ -4,3 +4,4 @@ var categories;
 var consumerLoggedIn = false;
 var $isConsumerLocationValid = false;
 var $isJobLocationValid = false;
+var isJobDescriptionValid = false;

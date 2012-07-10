@@ -417,7 +417,7 @@ div#slidingCanvas
 {
 	XXXborder : 1px solid red;
 	width : 100%;
-	height : 1024px;
+	height : 2048px;
 }
 
 div#slidingCanvas div#page1Marker
@@ -579,4 +579,84 @@ div#badCategoryDialog
     left : 23px;
     height : 134px;
     width : 155px;
+}
+
+div#page2DownArrow
+{
+    visibility : hidden;
+    position : absolute;
+    top : 810px;
+    left : 250px;
+    background-image : url("../images/down-arrow-up.png");
+    width : 70px;
+    height : 69px;
+}
+
+div#slidingCanvas div#page3Marker
+{
+    position : absolute;
+    top : 900px;
+    left : 0px;
+}
+
+div#mainForm textarea#enterLongDescription
+{
+    top : 920px;
+}
+
+textarea.quotefishMultiLineField
+{
+    text-align : center;
+    vertical-align: middle;
+    position : absolute;
+    height : 220px;
+    width : 570px;
+    left : 2px;
+    font-family : "Helvetica Neue", Arial, Sans-Serif;
+    font-size : 30px;
+    color : #666666;
+    font-weight : 200;
+    background-color : #fafafa;
+    border : 1px solid #a4a2a2;
+    box-shadow : inset 0px 0px 1px 1px #e1e1e1;
+    border-radius : 5px;
+}
+
+div#mainForm div#budgetButtons
+{
+    position : absolute;
+    width : 302px;
+    height : 35px;
+    top : 1180px;
+    left : 140px;
+}
+
+div#budgetButtons div#button500
+{
+    position : absolute;
+    width : 100px;
+    height : 35px;
+    top : 0px;
+    left : 0px;
+    background-image: url("../images/prices-500-up.png");
+}
+
+div#budgetButtons div#button500To2000
+{
+    position : absolute;
+    width : 102px;
+    height : 35px;
+    top : 0px;
+    left : 100px;
+    background-image: url("../images/prices-500to2000-up.png");
+}
+
+div#budgetButtons div#button2000
+{
+    position : absolute;
+    width : 100px;
+    height : 35px;
+    top : 0px;
+    left : 202px;
+    background-image: url("../images/prices-2000-up.png");
 }
