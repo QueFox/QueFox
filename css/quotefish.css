@@ -432,17 +432,6 @@ div#page1Arrow
 	height : 69px;
 }
 
-div#page2UpArrow
-{
-    visibility : visible;
-    position : absolute;
-    top : 470px;
-    left : 250px;
-    background-image : url("../images/up-arrow-up.png");
-    width : 70px;
-    height : 69px;
-}
-
 
 #enterCategoryTip
 {
@@ -683,6 +672,183 @@ div#budgetButtons div#button2000
     left : 30px;
     width : 140px;
     height : 150px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
+}
+
+div#page3DownArrow
+{
+    visibility : hidden;
+    position : absolute;
+    top : 1250px;
+    left : 250px;
+    background-image : url("../images/down-arrow-up.png");
+    width : 70px;
+    height : 69px;
+}
+
+div#slidingCanvas div#page4Marker
+{
+    position : absolute;
+    top : 1350px;
+    left : 0px;
+}
+
+div#mainForm div#userTypeButtons
+{
+    position : absolute;
+    width : 216px;
+    height : 36px;
+    top : 1360px;
+    left : 178px;
+}
+
+div#userTypeButtons div#buttonNewUser
+{
+    position : absolute;
+    width : 108px;
+    height : 36px;
+    top : 0px;
+    left : 0px;
+    background-image: url("../images/newuser-up.png");
+    border: solid 1px grey;
+}
+
+div#userTypeButtons div#buttonReturnVisitor
+{
+    position : absolute;
+    width : 108px;
+    height : 36px;
+    top : 0px;
+    left : 108px;
+    background-image: url("../images/returnVisitor-up.png");
+    border: solid 1px grey;
+}
+
+div#mainForm input#firstName
+{
+    top : 1420px;
+    width : 275px;
+}
+
+div#mainForm input#lastName
+{
+    top : 1420px;
+    width : 275px;
+    left : 297px;
+}
+
+div#mainForm input#mobileNumber
+{
+    top : 1494px;
+}
+
+div#mainForm input#emailAddress
+{
+    top : 1568px;
+}
+
+div#mainForm input#password
+{
+    top : 1642px;
+}
+
+#nameTip
+{
+    visibility : visible;
+    position : absolute;
+    top : 1420px;
+    left : 580px;
+    width : 180px;
+    height : 54px;
+    background-image : url("../images/tooltip-slim.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#nameTipText
+{
+    position : absolute;
+    top : 10px;
+    left : 30px;
+    width : 140px;
+    height : 50px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
+}
+
+#mobileNumberTip
+{
+    visibility : visible;
+    position : absolute;
+    top : 1494px;
+    left : 580px;
+    width : 180px;
+    height : 54px;
+    background-image : url("../images/tooltip-slim.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#mobileNumberTipText
+{
+    position : absolute;
+    top : 10px;
+    left : 30px;
+    width : 140px;
+    height : 50px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
+}
+
+#emailAddressTip
+{
+    visibility : visible;
+    position : absolute;
+    top : 1568px;
+    left : 580px;
+    width : 180px;
+    height : 54px;
+    background-image : url("../images/tooltip-slim.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#emailAddressTipText
+{
+    position : absolute;
+    top : 10px;
+    left : 30px;
+    width : 140px;
+    height : 50px;
+    font-size : 10pt;
+    font-style : italic;
+    color : white;
+}
+
+#passwordTip
+{
+    visibility : visible;
+    position : absolute;
+    top : 1642px;
+    left : 580px;
+    width : 180px;
+    height : 54px;
+    background-image : url("../images/tooltip-slim.png");
+    background-size : 100%;
+    z-index : 1024;
+}
+
+#passwordTipText
+{
+    position : absolute;
+    top : 10px;
+    left : 30px;
+    width : 140px;
+    height : 50px;
     font-size : 10pt;
     font-style : italic;
     color : white;

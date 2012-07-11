@@ -272,6 +272,7 @@
                 $("#button2000").css({'background-image' : 'url("images/prices-2000-up.png")'});
                 $("div#progress div#budget").text("<€500");
                 $("div#progress div#budgetTick").css({visibility : "visible"});
+                updatePage3DownArrow();
             }
 
             function button500To2000Pressed()
@@ -282,6 +283,7 @@
                 $("#button2000").css({'background-image' : 'url("images/prices-2000-up.png")'});
                 $("div#progress div#budget").text("€500-€2,000");
                 $("div#progress div#budgetTick").css({visibility : "visible"});
+                updatePage3DownArrow();
             }
 
             function button2000Pressed()
@@ -292,6 +294,7 @@
                 $("#button2000").css({'background-image' : 'url("images/prices-2000-down.png")'});
                 $("div#progress div#budget").text("€2,000+");
                 $("div#progress div#budgetTick").css({visibility : "visible"});
+                updatePage3DownArrow();
             }
 
             $(function() {
@@ -320,7 +323,7 @@
                 var longDescriptionText = $("#enterLongDescription").val();
                 $("div#progress div#jobInDetail").text(longDescriptionText);
 
-                if(longDescriptionText.length > 0)
+                if(longDescriptionText.trim().length > 0)
                 {
                     //$("#enterJobLocation").focus();
                     $("div#progress div#jobInDetailTick").css({visibility : "visible"});
@@ -331,8 +334,22 @@
                     $("div#progress div#jobInDetailTick").css({visibility : "hidden"});
                     isLongDescriptionValid = false;
                 }
+
+                updatePage3DownArrow();
             }
 
+
+            function updatePage3DownArrow()
+            {
+                if ( isLongDescriptionValid && isBudgetValid)
+                {
+                    $("#page3DownArrow").css({visibility : "visible"});
+                }
+                else
+                {
+                    $("#page3DownArrow").css({visibility : "hidden"});
+                }
+            }
 
             function updateTips( t ) {
 				tips
@@ -486,7 +503,6 @@
 
 						<div id="page2Marker"></div>
 
-                        <a href="#page1Marker"><div id="page2UpArrow"></div></a>
 
 						<input	type="text" id="enterShortDescription" class="quotefishSingleLineField jq_watermark" 
 								name="enterShortDescription" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your job in a few short words&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
@@ -512,7 +528,29 @@
                         </div>
                         <div id="budgetTip"><div id="budgetTipText">This is where you select your budget for your job. Your selection here dictates how much the quoting business pay to quote on your job. Up to €500 costs them €2, €500-€2,000 costs €5 and €2,000+ costs €10.</div></div>
 
-					</div>
+                        <a href="#page4Marker"><div id="page3DownArrow"></div></a>
+
+                        <div id="page4Marker"></div>
+
+                        <div id="userTypeButtons">
+                            <div id="buttonNewUser"></div>
+                            <div id="buttonReturnVisitor"></div>
+                        </div>
+
+                        <input type="text" id="firstName" class="quotefishSingleLineField jq_watermark" name="firstName" placeholder="First Name"/>
+                        <input type="text" id="lastName" class="quotefishSingleLineField jq_watermark" name="lastName" placeholder="Last Name"/>
+                        <div id="nameTip"><div id="nameTipText">First and last<br/>name, please.</div></div>
+
+                        <input type="text" id="mobileNumber" class="quotefishSingleLineField jq_watermark" name="mobileNumber" placeholder="Your mobile number"/>
+                        <div id="mobileNumberTip"><div id="mobileNumberTipText">Please enter a valid<br/>mobile phone number.</div></div>
+
+                        <input type="text" id="emailAddress" class="quotefishSingleLineField jq_watermark" name="emailAddress" placeholder="Your email address"/>
+                        <div id="emailAddressTip"><div id="emailAddressTipText">In case we need<br/>to contact you.</div></div>
+
+                        <input type="password" id="password" class="quotefishSingleLineField jq_watermark" name="password" placeholder="Your password"/>
+                        <div id="passwordTip"><div id="passwordTipText">You'll need this next time you're here.</div></div>
+
+                    </div>
 				</div>
 			</div>
 			<div id="footer">
