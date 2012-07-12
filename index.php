@@ -351,6 +351,57 @@
                 }
             }
 
+            $(function() {
+                $("#buttonNewUser")
+                    .click(function() {
+                        buttonNewUserPressed();
+                    })
+            });
+
+            $(function() {
+                $("#buttonReturnVisitor")
+                    .click(function() {
+                        buttonReturnVisitorPressed();
+                    })
+            });
+
+            function buttonNewUserPressed()
+            {
+                isUserTypeValid = true;
+                $("#buttonNewUser").css({'background-image' : 'url("images/newUserButtonDown.png")'});
+                $("#buttonReturnVisitor").css({'background-image' : 'url("images/returnVisitorButtonUp.png")'});
+                $("#progress #newUser").css({'background-image' : 'url("images/greentick.png")'});
+                $("#progress #returnVisit").css({'background-image' : 'None'});
+                $("#firstName").css({visibility : "visible"});
+                $("#lastName").css({visibility : "visible"});
+                $("#mobileNumber").css({visibility : "visible"});
+                $("#nameTip").css({visibility : "visible"});
+                $("#mobileNumberTip").css({visibility : "visible"});
+                $("#emailAddressTip").css({visibility : "visible"});
+                $("#passwordTip").css({visibility : "visible"});
+                $("#emailAddress").css({top : "1568px"});
+                $("#password").css({top : "1642px"});
+            }
+
+            function buttonReturnVisitorPressed()
+            {
+                isUserTypeValid = true;
+                $("#buttonNewUser").css({'background-image' : 'url("images/newUserButtonUp.png")'});
+                $("#buttonReturnVisitor").css({'background-image' : 'url("images/returnVisitorButtonDown.png")'});
+                $("#progress #returnVisit").css({'background-image' : 'url("images/greentick.png")'});
+                $("#progress #newUser").css({'background-image' : 'None'});
+                $("#firstName").css({visibility : "hidden"});
+                $("#lastName").css({visibility : "hidden"});
+                $("#mobileNumber").css({visibility : "hidden"});
+                $("#nameTip").css({visibility : "hidden"});
+                $("#mobileNumberTip").css({visibility : "hidden"});
+                $("#emailAddressTip").css({visibility : "hidden"});
+                $("#passwordTip").css({visibility : "hidden"});
+                $("#emailAddress").css({top: 1568}).animate({top: 1420},500);
+                $("#password").css({top: 1642}).animate({top: 1494},750);
+
+            }
+
             function updateTips( t ) {
 				tips
 					.text( t )

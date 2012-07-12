@@ -251,6 +251,8 @@ div#main div#progress div#visitType div#newUser
 	left : 0px;
 	top : 0px;
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 div#main div#progress div#visitType div#returnVisit
@@ -263,6 +265,8 @@ div#main div#progress div#visitType div#returnVisit
 	left : 39px; 
 	top : 0px;
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 div#main div#progress div#consumerName
@@ -591,17 +595,17 @@ textarea.quotefishMultiLineField
 div#mainForm div#budgetButtons
 {
     position : absolute;
-    width : 302px;
-    height : 35px;
+    width : 396px;
+    height : 46px;
     top : 1180px;
-    left : 140px;
+    left : 93px;
 }
 
 div#budgetButtons div#button500
 {
     position : absolute;
-    width : 100px;
-    height : 35px;
+    width : 132px;
+    height : 46px;
     top : 0px;
     left : 0px;
     background-image: url("../images/prices-500-up.png");
@@ -610,20 +614,20 @@ div#budgetButtons div#button500
 div#budgetButtons div#button500To2000
 {
     position : absolute;
-    width : 102px;
-    height : 35px;
+    width : 132px;
+    height : 46px;
     top : 0px;
-    left : 100px;
+    left : 132px;
     background-image: url("../images/prices-500to2000-up.png");
 }
 
 div#budgetButtons div#button2000
 {
     position : absolute;
-    width : 100px;
-    height : 35px;
+    width : 132px;
+    height : 46px;
     top : 0px;
-    left : 202px;
+    left : 264px;
     background-image: url("../images/prices-2000-up.png");
 }
 
@@ -656,8 +660,8 @@ div#budgetButtons div#button2000
 {
     visibility : hidden;
     position : absolute;
-    top : 1165px;
-    left : 455px;
+    top : 1170px;
+    left : 490px;
     width : 180px;
     height : 156px;
     background-image : url("../images/tooltip-bottom.png");
@@ -698,32 +702,30 @@ div#slidingCanvas div#page4Marker
 div#mainForm div#userTypeButtons
 {
     position : absolute;
-    width : 216px;
-    height : 36px;
+    width : 264px;
+    height : 46px;
     top : 1360px;
-    left : 178px;
+    left : 154px;
 }
 
 div#userTypeButtons div#buttonNewUser
 {
     position : absolute;
-    width : 108px;
-    height : 36px;
+    width : 132px;
+    height : 46px;
     top : 0px;
     left : 0px;
-    background-image: url("../images/newuser-up.png");
-    border: solid 1px grey;
+    background-image: url("../images/newUserButtonUp.png");
 }
 
 div#userTypeButtons div#buttonReturnVisitor
 {
     position : absolute;
-    width : 108px;
-    height : 36px;
+    width : 132px;
+    height : 46px;
     top : 0px;
-    left : 108px;
-    background-image: url("../images/returnVisitor-up.png");
-    border: solid 1px grey;
+    left : 132px;
+    background-image: url("../images/returnVisitorButtonUp.png");
 }
 
 div#mainForm input#firstName
