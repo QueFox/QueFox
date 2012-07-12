@@ -518,21 +518,21 @@
 			</div>
 			<div id="main">
 				<div id="progress">
-					<div id="category"></div><div id="categoryTick" class="progressTick"></div>
-					<div id="consumerLocation"></div><div id="consumerLocationTick" class="progressTick"></div>
-					<div id="jobDescription"></div><div id="jobDescriptionTick" class="progressTick"></div>
-					<div id="jobLocation"></div><div id="jobLocationTick" class="progressTick"></div>
-					<div id="jobInDetail"></div><div id="jobInDetailTick" class="progressTick"></div>
-					<div id="budget"></div><div id="budgetTick" class="progressTick"></div>
+					<a href="#page1Marker"><div id="category"></div></a><div id="categoryTick" class="progressTick"></div>
+                    <a href="#page1Marker"><div id="consumerLocation"></div></a><div id="consumerLocationTick" class="progressTick"></div>
+                    <a href="#page2Marker"><div id="jobDescription"></div></a><div id="jobDescriptionTick" class="progressTick"></div>
+                    <a href="#page2Marker"><div id="jobLocation"></div></a><div id="jobLocationTick" class="progressTick"></div>
+                    <a href="#page3Marker"><div id="jobInDetail"></div></a><div id="jobInDetailTick" class="progressTick"></div>
+                    <a href="#page3Marker"><div id="budget"></div></a><div id="budgetTick" class="progressTick"></div>
 					<div id="visitType">
-						<div id="newUser"></div>
-						<div id="returnVisit"></div>
+                        <a href="#page4Marker"><div id="newUser"></div></a>
+                        <a href="#page4Marker"><div id="returnVisit"></div></a>
 					</div>
-					<div id="consumerName"></div>
-					<div id="consumerMobileNumber"></div>
-					<div id="consumerEmail"></div>
-					<div id="consumerPassword"></div>
-					<div id="tick"></div>
+                    <a href="#page4Marker"><div id="consumerName"></div></a>
+                    <a href="#page4Marker"><div id="consumerMobileNumber"></div></a>
+                    <a href="#page4Marker"><div id="consumerEmail"></div></a>
+                    <a href="#page4Marker"><div id="consumerPassword"></div></a>
+                    <a href="#page4Marker"><div id="tick"></div></a>
 				</div>
 				<div id="mainForm">
 					<div id="slidingCanvas">

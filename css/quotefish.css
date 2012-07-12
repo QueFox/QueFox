@@ -855,3 +855,13 @@ div#mainForm input#password
     font-style : italic;
     color : white;
 }
+
+div#main a:link              { color:#838383; text-decoration:none; }
+div#main a:visited           { color:#838383; text-decoration:none; }
+div#main a:hover             { color:#838383; text-decoration:none; }
+div#main a:active            { color:#838383; text-decoration:none; }
+
+div#main a.otherLink:link    { color:#838383; text-decoration:none; }
+div#main a.otherLink:visited { color:#838383; text-decoration:none; }
+div#main a.otherLink:hover   { color:#838383; text-decoration:none; }
+div#main a.otherLink:active  { color:#838383; text-decoration:none; }
