@@ -401,6 +401,16 @@ div#slidingCanvas
 	height : 2048px;
 }
 
+div#main:focus, div#mainForm:focus, div#slidingCanvas:focus
+{
+    outline : none;
+}
+
+input:focus,textarea:focus
+{
+    outline: none;
+}
+
 div#slidingCanvas div#page1Marker
 {
 	position : absolute;
