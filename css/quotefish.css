@@ -10,7 +10,7 @@ body  div#container
 	text-align : left;
 	width : 1024px;
 	height : 690px;
-	background-image : url("../images/background.png");
+	background-image : url("../images/background_new.png");
 	font-family : "Helvetica Neue", Arial, Sans-Serif; 
 }
 body  div#container div#banner
@@ -39,14 +39,14 @@ body  div#container div#main
 	Xleft : 0px;
 	width : 1024px;
 	height : 429px;
-	background-image : url("../images/background.png");
+	background-image : url("../images/background_new.png");
 }
 body  div#container div#footer
 {
 	position : absolute;
-	top : 548px;
+	top : 623px;
 	width : 1024px;
-	height : 150px;
+	height : 75px;
 	background-color : #668e88;
 }
 div#banner div#logIn
@@ -225,13 +225,6 @@ div#main div#progress div#budgetTick
     top : 220px;
 }
 
-div#footer img#footerButtons
-{
-	position : absolute;
-	left : 440px;
-	top : 0px;
-}
-
 div#main div#progress div#visitType
 {
 	position : absolute;
@@ -333,7 +326,7 @@ div#main div#mainForm
 	position : absolute;
 	top : 0px;
 	left : 230px;
-	height : 435px;
+	height : 510px;
 	width : 790px;
 	overflow : hidden;
 }
@@ -398,7 +391,7 @@ div#slidingCanvas
 {
 	XXXborder : 1px solid red;
 	width : 100%;
-	height : 2048px;
+	height : 4096px;
 }
 
 div#main:focus, div#mainForm:focus, div#slidingCanvas:focus
@@ -451,8 +444,8 @@ div#page1Arrow
 {
 	visibility : hidden;
 	position : absolute;
-	top : 2px;
-	left : 580px;
+	top : 5px;
+	left : 575px;
 	width : 180px;
 	height : 156px;
 	background-image : url("../images/tooltip-top.png");
@@ -575,13 +568,13 @@ div#page2DownArrow
 div#slidingCanvas div#page3Marker
 {
     position : absolute;
-    top : 900px;
+    top : 975px;
     left : 0px;
 }
 
 div#mainForm textarea#enterLongDescription
 {
-    top : 920px;
+    top : 995px;
 }
 
 textarea.quotefishMultiLineField
@@ -607,7 +600,7 @@ div#mainForm div#budgetButtons
     position : absolute;
     width : 396px;
     height : 46px;
-    top : 1180px;
+    top : 1255px;
     left : 93px;
 }
 
@@ -645,7 +638,7 @@ div#budgetButtons div#button2000
 {
     visibility : hidden;
     position : absolute;
-    top : 920px;
+    top : 995px;
     left : 580px;
     width : 180px;
     height : 156px;
@@ -670,7 +663,7 @@ div#budgetButtons div#button2000
 {
     visibility : hidden;
     position : absolute;
-    top : 1170px;
+    top : 1245px;
     left : 490px;
     width : 180px;
     height : 156px;
@@ -695,7 +688,7 @@ div#page3DownArrow
 {
     visibility : hidden;
     position : absolute;
-    top : 1250px;
+    top : 1400px;
     left : 250px;
     background-image : url("../images/down-arrow-up.png");
     width : 70px;
@@ -705,7 +698,7 @@ div#page3DownArrow
 div#slidingCanvas div#page4Marker
 {
     position : absolute;
-    top : 1350px;
+    top : 1525px;
     left : 0px;
 }
 
@@ -714,7 +707,7 @@ div#mainForm div#userTypeButtons
     position : absolute;
     width : 264px;
     height : 46px;
-    top : 1360px;
+    top : 1535px;
     left : 154px;
 }
 
@@ -740,37 +733,37 @@ div#userTypeButtons div#buttonReturnVisitor
 
 div#mainForm input#firstName
 {
-    top : 1420px;
+    top : 1595px;
     width : 275px;
 }
 
 div#mainForm input#lastName
 {
-    top : 1420px;
+    top : 1595px;
     width : 275px;
     left : 297px;
 }
 
 div#mainForm input#mobileNumber
 {
-    top : 1494px;
+    top : 1669px;
 }
 
 div#mainForm input#emailAddress
 {
-    top : 1568px;
+    top : 1743px;
 }
 
 div#mainForm input#password
 {
-    top : 1642px;
+    top : 1817px;
 }
 
 #nameTip
 {
     visibility : visible;
     position : absolute;
-    top : 1420px;
+    top : 1595px;
     left : 580px;
     width : 180px;
     height : 54px;
@@ -795,7 +788,7 @@ div#mainForm input#password
 {
     visibility : visible;
     position : absolute;
-    top : 1494px;
+    top : 1669px;
     left : 580px;
     width : 180px;
     height : 54px;
@@ -820,7 +813,7 @@ div#mainForm input#password
 {
     visibility : visible;
     position : absolute;
-    top : 1568px;
+    top : 1743px;
     left : 580px;
     width : 180px;
     height : 54px;
@@ -845,7 +838,7 @@ div#mainForm input#password
 {
     visibility : visible;
     position : absolute;
-    top : 1642px;
+    top : 1817px;
     left : 580px;
     width : 180px;
     height : 54px;
@@ -875,3 +868,97 @@ div#main a.otherLink:link    { color:#838383; text-decoration:none; }
 div#main a.otherLink:visited { color:#838383; text-decoration:none; }
 div#main a.otherLink:hover   { color:#838383; text-decoration:none; }
 div#main a.otherLink:active  { color:#838383; text-decoration:none; }
+
+div#footer a:link              { color:white; text-decoration:none; }
+div#footer a:visited           { color:white; text-decoration:none; }
+div#footer a:hover             { color:white; text-decoration:none; }
+div#footer a:active            { color:white; text-decoration:none; }
+
+div#footer a.otherLink:link    { color:white; text-decoration:none; }
+div#footer a.otherLink:visited { color:white; text-decoration:none; }
+div#footer a.otherLink:hover   { color:white; text-decoration:none; }
+div#footer a.otherLink:active  { color:white; text-decoration:none; }
+
+div#footer
+{
+    color : white;
+    font-size: 10px;
+    text-align: center;
+}
+
+div#footer a img
+{
+    width : 40px;
+    height: 40px;
+}
+div#footer a
+{
+    position : absolute;
+    width : 80px;
+    height : 80px;
+    top : 10px;
+}
+
+div#footer a#blogAnchor
+{
+    left : 940px;
+}
+
+div#footer a#contactAnchor
+{
+    left : 880px;
+}
+
+div#footer a#termsAnchor
+{
+    left : 820px;
+}
+
+div#footer a#businessesAnchor
+{
+    left : 760px;
+}
+
+div#footer a#consumersAnchor
+{
+    left : 700px;
+}
+
+div#completion
+{
+    position : absolute;
+    top : 1917px;
+    left : 85px;
+    height : 80px;
+    width : 600px;
+}
+
+div#completion div#postAnotherJob
+{
+    position : absolute;
+    left : 0px;
+    top : 18px;
+    width : 153px;
+    height : 45px;
+    background-image: url("../images/post-another-job-up.png");
+}
+
+div#completion div#success
+{
+    position : absolute;
+    left : 163px;
+    top : 0px;
+    width : 80px;
+    height : 80px;
+    background-image: url("../images/success_incomplete.png");
+}
+
+div#completion div#goToDashboard
+{
+    position : absolute;
+    left : 253px;
+    top : 18px;
+    width : 153px;
+    height : 45px;
+    background-image: url("../images/dashboard-up.png");
+}

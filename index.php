@@ -15,8 +15,10 @@
 		<script src="js/dw_scroll_c.js" type="text/javascript"></script>
 		<script src="js/GoogleMaps.js" type="text/javascript"></script>
 		<!--<script type="text/javascript" src="js/jquery.watermark.js"></script>-->
-		
+
 		<script src="js/globals.index.php.js" type="text/javascript"></script>
+
+        <script src="js/ConsumerLayout.js" type="text/javascript"></script>
 		
 		<script>
 		
@@ -379,8 +381,8 @@
                 $("#mobileNumberTip").css({visibility : "visible"});
                 $("#emailAddressTip").css({visibility : "visible"});
                 $("#passwordTip").css({visibility : "visible"});
-                $("#emailAddress").css({top : "1568px"});
-                $("#password").css({top : "1642px"});
+                $("#emailAddress").css({top : emailAddressTop});
+                $("#password").css({top : passwordTop});
             }
 
             function buttonReturnVisitorPressed()
@@ -397,8 +399,8 @@
                 $("#mobileNumberTip").css({visibility : "hidden"});
                 $("#emailAddressTip").css({visibility : "hidden"});
                 $("#passwordTip").css({visibility : "hidden"});
-                $("#emailAddress").css({top: 1568}).animate({top: 1420},500);
-                $("#password").css({top: 1642}).animate({top: 1494},750);
+                $("#emailAddress").css({top: emailAddressTop}).animate({top: nameTop},500);
+                $("#password").css({top: passwordTop}).animate({top: mobileNumberTop},750);
 
             }
 
@@ -569,7 +571,7 @@
 
                         <div id="page3Marker"></div>
 
-                        <textarea id="enterLongDescription" class="quotefishMultiLineField jq_watermark" name="enterLongDescription" placeholder="Describe your job in detail"></textarea>
+                        <textarea id="enterLongDescription" class="quotefishMultiLineField jq_watermark" name="enterLongDescription" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe your job in detail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></textarea>
                         <div id="enterLongDescriptionTip"><div id="longDescriptionTipText">Please supply all the information you can so businesses can give you their best quote. The more information you provide, the more quotes you'll receive.</div></div>
 
                         <div id="budgetButtons">
@@ -588,24 +590,34 @@
                             <div id="buttonReturnVisitor"></div>
                         </div>
 
-                        <input type="text" id="firstName" class="quotefishSingleLineField jq_watermark" name="firstName" placeholder="First Name"/>
-                        <input type="text" id="lastName" class="quotefishSingleLineField jq_watermark" name="lastName" placeholder="Last Name"/>
+                        <input type="text" id="firstName" class="quotefishSingleLineField jq_watermark" name="firstName" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
+                        <input type="text" id="lastName" class="quotefishSingleLineField jq_watermark" name="lastName" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
                         <div id="nameTip"><div id="nameTipText">First and last<br/>name, please.</div></div>
 
-                        <input type="text" id="mobileNumber" class="quotefishSingleLineField jq_watermark" name="mobileNumber" placeholder="Your mobile number"/>
+                        <input type="text" id="mobileNumber" class="quotefishSingleLineField jq_watermark" name="mobileNumber" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your mobile number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
                         <div id="mobileNumberTip"><div id="mobileNumberTipText">Please enter a valid<br/>mobile phone number.</div></div>
 
-                        <input type="text" id="emailAddress" class="quotefishSingleLineField jq_watermark" name="emailAddress" placeholder="Your email address"/>
+                        <input type="text" id="emailAddress" class="quotefishSingleLineField jq_watermark" name="emailAddress" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your email address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
                         <div id="emailAddressTip"><div id="emailAddressTipText">In case we need<br/>to contact you.</div></div>
 
-                        <input type="password" id="password" class="quotefishSingleLineField jq_watermark" name="password" placeholder="Your password"/>
+                        <input type="password" id="password" class="quotefishSingleLineField jq_watermark" name="password" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
                         <div id="passwordTip"><div id="passwordTipText">You'll need this next time you're here.</div></div>
 
+                        <!--<div id="completion">
+                            <div id="postAnotherJob"></div>
+                            <div id="success"></div>
+                            <div id="goToDashboard"></div>
+                        </div>
+                        -->
                     </div>
 				</div>
 			</div>
 			<div id="footer">
-				<img id="footerButtons" src="images/footerbuttons.png" />
+                <a href="" id="consumersAnchor"><img src="images/Consumers_Icon.png" id="consumersIcon"><br/>Consumers</a>
+                <a href="" id="businessesAnchor"><img src="images/Businesses_Icon.png" id="businessesIcon"><br/>Businesses</a>
+                <a href="" id="termsAnchor"><img src="images/Terms_Icon.png" id="termsIcon"><br/>Terms</a>
+                <a href="" id="contactAnchor"><img src="images/Contact_Icon.png" id="contactIcon"><br/>Contact</a>
+                <a href="" id="blogAnchor"><img src="images/Blog_Icon.png" id="blogIcon"><br/>Blog</a>
 			</div>
 		</div>
 	</body>

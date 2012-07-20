@@ -1,0 +1,30 @@
+Large popup higher Top should be -95px above the Top of its respective input control.
+Large popup lower Top should be at the same position as the Top of its respective input control.
+
+Small popup Top should be at the same position as the Top of its respective input control.
+
+Popup Left (in all cases except Budget Buttons) = 575
+Popup Left (Budget Buttons) = 490
+
+Page1Marker Top = 0
+Consumer Category Top = 100 = Page1Marker Top + 100
+Consumer Location Top = 250 = Page1Marker Top + 250
+Page1Arrow Top = 330 = Page1Marker Top + 330
+
+
+Page2Marker Top = 465 = Page1Marker Top + 465
+Short Job Description Top = 570 = Page2Marker Top + 105
+Job Location Top = 720 = Page2Marker Top + 255
+Page2Arrow Top = 810 = Page2Marker Top + 345
+
+Page3Marker Top = 975 = Page2Marker Top + 510
+Long Job Description Top = 995 = Page3Marker Top + 530
+Budget Buttons Top = 1255 = Page3Marker Top + 280
+Page3Arrow Top = 1400 = Page3Marker Top + 425
+
+Page4Marker Top = 1525 = Page3Marker Top + 550
+UserType Buttons Top = 1535 = Page4Marker Top + 10
+Names Top = 1595 = Page4Marker Top + 70
+Mobile Number Top = 1669 = Page4MarkerTop + 144
+Email Address Top = 1743 = Page4Marker Top + 218
+Password Top = 1817 = Page4Marker Top + 292
