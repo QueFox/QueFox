@@ -64,6 +64,8 @@ var passwordTop = page4MarkerTop + 292;
 var passwordTipTop = passwordTop;
 var page4ArrowTop = page4MarkerTop + 430;
 
+// Page 4
+var page5MarkerTop = page4MarkerTop + 600;
 
 $(function()
 {
@@ -95,10 +97,11 @@ $(function()
     $("#nameTip").css({                     left : standardTipLeft,             top : nameTipTop});
     $("#mobileNumber").css({                left : standardConsumerFieldLeft,   top : mobileNumberTop});
     $("#mobileNumberTip").css({             left : standardTipLeft,             top : mobileNumberTipTop});
-    $("#emailAddress").css({                 left : standardConsumerFieldLeft,   top : emailAddressTop});
-    $("#emailAddressTip").css({              left : standardTipLeft,             top : emailAddressTipTop});
-    $("#password").css({                     left : standardConsumerFieldLeft,   top : passwordTop});
-    $("#passwordTip").css({                  left : standardTipLeft,             top : passwordTipTop});
-    $("#page4DownArrow").css({               left : pageArrowLeft,               top : page4ArrowTop});
+    $("#emailAddress").css({                left : standardConsumerFieldLeft,   top : emailAddressTop});
+    $("#emailAddressTip").css({             left : standardTipLeft,             top : emailAddressTipTop});
+    $("#password").css({                    left : standardConsumerFieldLeft,   top : passwordTop});
+    $("#passwordTip").css({                 left : standardTipLeft,             top : passwordTipTop});
+    $("#page4DownArrow").css({              left : pageArrowLeft,               top : page4ArrowTop});
 
+    $("#page5Marker").css({                 left : pageMarkerLeft,              top : page5MarkerTop});
 });

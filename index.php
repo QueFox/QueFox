@@ -372,17 +372,17 @@
                 isUserTypeValid = true;
                 $("#buttonNewUser").css({'background-image' : 'url("images/newUserButtonDown.png")'});
                 $("#buttonReturnVisitor").css({'background-image' : 'url("images/returnVisitorButtonUp.png")'});
-                $("#progress #newUser").css({'background-image' : 'url("images/greentick.png")'});
+                $("#progress #newUser").css({'background-image' : 'url("images/tiny-tick.png")'});
                 $("#progress #returnVisit").css({'background-image' : 'None'});
                 $("#firstName").css({visibility : "visible"});
                 $("#lastName").css({visibility : "visible"});
                 $("#mobileNumber").css({visibility : "visible"});
-                $("#nameTip").css({visibility : "visible"});
-                $("#mobileNumberTip").css({visibility : "visible"});
-                $("#emailAddressTip").css({visibility : "visible"});
-                $("#passwordTip").css({visibility : "visible"});
-                $("#emailAddress").css({top : emailAddressTop});
-                $("#password").css({top : passwordTop});
+                $("#emailAddress").css({top : emailAddressTop, visibility : "visible"});
+                $("#password").css({top : passwordTop, visibility : "visible"});
+                $("#nameTip").css({visibility : "hidden"});
+                $("#mobileNumberTip").css({visibility : "hidden"});
+                $("#emailAddressTip").css({visibility : "hidden"});
+                $("#passwordTip").css({visibility : "hidden"});
             }
 
             function buttonReturnVisitorPressed()
@@ -390,7 +390,7 @@
                 isUserTypeValid = true;
                 $("#buttonNewUser").css({'background-image' : 'url("images/newUserButtonUp.png")'});
                 $("#buttonReturnVisitor").css({'background-image' : 'url("images/returnVisitorButtonDown.png")'});
-                $("#progress #returnVisit").css({'background-image' : 'url("images/greentick.png")'});
+                $("#progress #returnVisit").css({'background-image' : 'url("images/tiny-tick.png")'});
                 $("#progress #newUser").css({'background-image' : 'None'});
                 $("#firstName").css({visibility : "hidden"});
                 $("#lastName").css({visibility : "hidden"});
@@ -401,7 +401,93 @@
                 $("#passwordTip").css({visibility : "hidden"});
                 $("#emailAddress").css({top: emailAddressTop}).animate({top: nameTop},500);
                 $("#password").css({top: passwordTop}).animate({top: mobileNumberTop},750);
+            }
 
+            $(function() {
+                $("#firstName")
+                    .focusin(function() {
+                        focusInFirstName();
+                    }).focusout(function() {
+                        processConfirmOnFirstName();
+                    }).keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnFirstName();
+                        }
+                    })
+            });
+
+            $(function() {
+                $("#lastName")
+                    .focusin(function() {
+                        focusInLastName();
+                    }).focusout(function() {
+                        processConfirmOnLastName();
+                    }).keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnLastName();
+                        }
+                    })
+            });
+            function focusInFirstName()
+            {
+                showNameTip();
+            }
+
+            function focusInLastName()
+            {
+                showNameTip();
+            }
+            function showNameTip()
+            {
+                $("#nameTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            function processConfirmOnFirstName()
+            {
+                var firstNameText = $("#firstName").val().trim();
+                var lastNameText = $("#lastName").val().trim();
+                $("div#progress div#consumerName").text(firstNameText + ' ' + lastNameText);
+
+                if(firstNameText.length > 0)
+                {
+                    $("#lastName").focus();
+                    isFirstNameValid = true;
+
+                    if(isLastNameValid)
+                    {
+                        $("div#progress div#consumerNameTick").css({visibility : "visible"});
+                    }
+                }
+                else
+                {
+                    $("div#progress div#consumerNameTick").css({visibility : "hidden"});
+                    isFirstNameValid = false;
+                }
+            }
+
+            function processConfirmOnLastName()
+            {
+                var firstNameText = $("#firstName").val().trim();
+                var lastNameText = $("#lastName").val().trim();
+                $("div#progress div#consumerName").text(firstNameText + ' ' + lastNameText);
+
+                if(lastNameText.length > 0)
+                {
+                    $("#mobileNumber").focus();
+                    isLastNameValid = true;
+
+                    if(isFirstNameValid)
+                    {
+                        $("div#progress div#consumerNameTick").css({visibility : "visible"});
+                    }
+                }
+                else
+                {
+                    $("div#progress div#consumerNameTick").css({visibility : "hidden"});
+                    isLastNameValid = false;
+                }
             }
 
             function updateTips( t ) {
@@ -530,11 +616,12 @@
                         <a href="#page4Marker"><div id="newUser"></div></a>
                         <a href="#page4Marker"><div id="returnVisit"></div></a>
 					</div>
-                    <a href="#page4Marker"><div id="consumerName"></div></a>
-                    <a href="#page4Marker"><div id="consumerMobileNumber"></div></a>
-                    <a href="#page4Marker"><div id="consumerEmail"></div></a>
-                    <a href="#page4Marker"><div id="consumerPassword"></div></a>
-                    <a href="#page4Marker"><div id="tick"></div></a>
+                    <a href="#page4Marker"><div id="consumerName"></div></a><div id="consumerNameTick" class="progressTick"></div>
+                    <a href="#page4Marker"><div id="consumerMobileNumber"></div></a><div id="consumerMobileNumberTick" class="progressTick"></div>
+                    <a href="#page4Marker"><div id="consumerEmail"></div></a><div id="consumerEmailTick" class="progressTick"></div>
+                    <a href="#page4Marker"><div id="consumerPassword"></div></a><div id="consumerPasswordTick" class="progressTick"></div>
+
+                    <a href="#page5Marker"><div id="tick"></div></a>
 				</div>
 				<div id="mainForm">
 					<div id="slidingCanvas">
@@ -602,6 +689,10 @@
 
                         <input type="password" id="password" class="quotefishSingleLineField jq_watermark" name="password" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/>
                         <div id="passwordTip"><div id="passwordTipText">You'll need this next time you're here.</div></div>
+
+                        <a href="#page5Marker"><div id="page4DownArrow"></div></a>
+
+                        <div id="page5Marker"></div>
 
                         <!--<div id="completion">
                             <div id="postAnotherJob"></div>

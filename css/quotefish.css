@@ -105,7 +105,9 @@ div#main div#progress div.progressTick
 	left : 205px;
 	width : 18px;
 	height : 18px;
-	background-image : url("../images/greentick.png");
+	background-image : url("../images/tiny-tick.png");
+    background-repeat: no-repeat;
+    background-position: center;
 	visibility : hidden;
 }
 
@@ -274,6 +276,12 @@ div#main div#progress div#consumerName
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
 }
 
+div#main div#progress div#consumerNameTick
+{
+    top : 280px;
+}
+
+
 div#main div#progress div#consumerMobileNumber
 {
 	position : absolute;
@@ -284,6 +292,11 @@ div#main div#progress div#consumerMobileNumber
 	left : 20px;
 	top : 300px;
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
+}
+
+div#main div#progress div#consumerMobileNumberTick
+{
+    top : 300px;
 }
 
 div#main div#progress div#consumerEmail
@@ -298,6 +311,11 @@ div#main div#progress div#consumerEmail
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
 }
 
+div#main div#progress div#consumerEmailTick
+{
+    top : 320px;
+}
+
 div#main div#progress div#consumerPassword
 {
 	position : absolute;
@@ -308,6 +326,11 @@ div#main div#progress div#consumerPassword
 	left : 20px;
 	top : 340px;
 	box-shadow : inset 0px 1px 1px 1px #c7c7c7;
+}
+
+div#main div#progress div#consumerPasswordTick
+{
+    top : 340px;
 }
 
 div#main div#progress div#tick
@@ -733,38 +756,36 @@ div#userTypeButtons div#buttonReturnVisitor
 
 div#mainForm input#firstName
 {
-    top : 1595px;
+    visibility : hidden;
     width : 275px;
 }
 
 div#mainForm input#lastName
 {
-    top : 1595px;
+    visibility : hidden;
     width : 275px;
     left : 297px;
 }
 
 div#mainForm input#mobileNumber
 {
-    top : 1669px;
+    visibility : hidden;
 }
 
 div#mainForm input#emailAddress
 {
-    top : 1743px;
+    visibility : hidden;
 }
 
 div#mainForm input#password
 {
-    top : 1817px;
+    visibility : hidden;
 }
 
 #nameTip
 {
-    visibility : visible;
+    visibility : hidden;
     position : absolute;
-    top : 1595px;
-    left : 580px;
     width : 180px;
     height : 54px;
     background-image : url("../images/tooltip-slim.png");
@@ -786,7 +807,7 @@ div#mainForm input#password
 
 #mobileNumberTip
 {
-    visibility : visible;
+    visibility : hidden;
     position : absolute;
     top : 1669px;
     left : 580px;
@@ -811,7 +832,7 @@ div#mainForm input#password
 
 #emailAddressTip
 {
-    visibility : visible;
+    visibility : hidden;
     position : absolute;
     top : 1743px;
     left : 580px;
@@ -836,7 +857,7 @@ div#mainForm input#password
 
 #passwordTip
 {
-    visibility : visible;
+    visibility : hidden;
     position : absolute;
     top : 1817px;
     left : 580px;
@@ -961,4 +982,19 @@ div#completion div#goToDashboard
     width : 153px;
     height : 45px;
     background-image: url("../images/dashboard-up.png");
+}
+
+div#page4DownArrow
+{
+    visibility : visible;
+    position : absolute;
+    background-image : url("../images/green-arrow.png");
+    width : 70px;
+    height : 69px;
+}
+
+div#slidingCanvas div#page5Marker
+{
+    position : absolute;
+    left : 0px;
 }
