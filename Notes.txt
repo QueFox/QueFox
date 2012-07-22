@@ -28,3 +28,7 @@ Names Top = 1595 = Page4Marker Top + 70
 Mobile Number Top = 1669 = Page4MarkerTop + 144
 Email Address Top = 1743 = Page4Marker Top + 218
 Password Top = 1817 = Page4Marker Top + 292
+
+Email address regex:
+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?
+

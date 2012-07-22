@@ -986,7 +986,7 @@ div#completion div#goToDashboard
 
 div#page4DownArrow
 {
-    visibility : visible;
+    visibility : hidden;
     position : absolute;
     background-image : url("../images/green-arrow.png");
     width : 70px;

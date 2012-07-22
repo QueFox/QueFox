@@ -430,6 +430,49 @@
                         }
                     })
             });
+
+            $(function() {
+                $("#mobileNumber")
+                    .focusin(function() {
+                        focusInMobileNumber();
+                    }).focusout(function() {
+                        processConfirmOnMobileNumber();
+                    }).keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnMobileNumber();
+                        }
+                    })
+            });
+
+            $(function() {
+                $("#emailAddress")
+                    .focusin(function() {
+                        focusInEmailAddress();
+                    }).focusout(function() {
+                        processConfirmOnEmailAddress();
+                    }).keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnEmailAddress();
+                        }
+                    })
+            });
+
+            $(function() {
+                $("#password")
+                    .focusin(function() {
+                        focusInPassword();
+                    }).focusout(function() {
+                        processConfirmOnPassword();
+                    }).keypress(function(e) {
+                        if(e.which == 13)
+                        {
+                            processConfirmOnPassword();
+                        }
+                    })
+            });
+
             function focusInFirstName()
             {
                 showNameTip();
@@ -439,9 +482,38 @@
             {
                 showNameTip();
             }
+            function focusInMobileNumber()
+            {
+                showMobileNumberTip();
+            }
+
+            function focusInEmailAddress()
+            {
+                showEmailAddressTip();
+            }
+
+            function focusInPassword()
+            {
+                showPasswordTip();
+            }
             function showNameTip()
             {
                 $("#nameTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            function showMobileNumberTip()
+            {
+                $("#mobileNumberTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            function showEmailAddressTip()
+            {
+                $("#emailAddressTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+            }
+
+            function showPasswordTip()
+            {
+                $("#passwordTip").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
             }
 
             function processConfirmOnFirstName()
@@ -465,6 +537,8 @@
                     $("div#progress div#consumerNameTick").css({visibility : "hidden"});
                     isFirstNameValid = false;
                 }
+
+                updatePage4Arrow();
             }
 
             function processConfirmOnLastName()
@@ -487,6 +561,105 @@
                 {
                     $("div#progress div#consumerNameTick").css({visibility : "hidden"});
                     isLastNameValid = false;
+                }
+
+                updatePage4Arrow();
+            }
+
+            function processConfirmOnMobileNumber()
+            {
+                var mobileNumberText = $("#mobileNumber").val().trim();
+
+                if(mobileNumberText.length > 0 && isValidMobileNumber(mobileNumberText))
+                {
+                    mobileNumberText = formatMobileNumber(mobileNumberText);
+                    $("#mobileNumber").val(mobileNumberText);
+                    $("div#progress div#consumerMobileNumber").text(mobileNumberText);
+                    $("div#progress div#consumerMobileNumberTick").css({visibility : "visible"});
+                    $("#emailAddress").focus();
+                    isMobileNumberValid = true;
+                }
+                else
+                {
+                    $("div#progress div#consumerMobileNumberTick").css({visibility : "hidden"});
+                    isMobileNumberValid = false;
+                }
+
+                updatePage4Arrow();
+            }
+
+            function processConfirmOnEmailAddress()
+            {
+                var emailAddressText = $("#emailAddress").val().trim();
+
+                if(emailAddressText.length > 0 && isValidEmailAddress(emailAddressText))
+                {
+                    $("div#progress div#consumerEmail").text(emailAddressText);
+                    $("div#progress div#consumerEmailTick").css({visibility : "visible"});
+                    $("#password").focus();
+                    isEmailAddressValid = true;
+                }
+                else
+                {
+                    $("div#progress div#consumerEmailTick").css({visibility : "hidden"});
+                    isEmailAddressValid = false;
+                }
+
+                updatePage4Arrow();
+            }
+
+            function processConfirmOnPassword()
+            {
+                var passwordText = $("#password").val().trim();
+
+                if(passwordText.length > 6)
+                {
+                    $("div#progress div#consumerPassword").text(passwordText);
+                    $("div#progress div#consumerPasswordTick").css({visibility : "visible"});
+                    $("#page4DownArrow").focus();
+                    isPasswordValid = true;
+                }
+                else
+                {
+                    $("div#progress div#consumerPasswordTick").css({visibility : "hidden"});
+                    isPasswordValid = false;
+                }
+
+                updatePage4Arrow();
+            }
+
+            function isValidMobileNumber(mobileNumber)
+            {
+                var mobileNumberRegExp= new RegExp("08[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]");
+                var pureMobileNumber = mobileNumber.replace("(","").replace(")","").replace(" ","");
+                return mobileNumberRegExp.test(pureMobileNumber);
+            }
+
+            function isValidEmailAddress(emailAddress)
+            {
+                var emailAddressRegExp= new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                return emailAddressRegExp.test(emailAddress);
+            }
+
+            function formatMobileNumber(mobileNumber)
+            {
+                return "(" + mobileNumber.substring(0,3) + ") " + mobileNumber.substring(3,6) + " " + mobileNumber.substring(6,10);
+            }
+
+            function isPage4Valid()
+            {
+                return isFirstNameValid && isLastNameValid && isMobileNumberValid && isEmailAddressValid && isPasswordValid;
+            }
+
+            function updatePage4Arrow()
+            {
+                if(isPage4Valid())
+                {
+                    $("#page4DownArrow").css({opacity: 0, visibility: "visible"}).animate({opacity: 1},3000);
+                }
+                else
+                {
+                    $("#page4DownArrow").css({visibility: "hidden"});
                 }
             }
 
